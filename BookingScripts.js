@@ -1,6 +1,11 @@
+const nameInput = document.getElementById("name_input");
+const emailInput = document.getElementById("email_input");
 const serviceSelect = document.getElementById("service_select");
 const controllerSelect = document.getElementById("controller_select");
+const otherInput = document.getElementById("other_controller_input");
 const dateInput = document.getElementById("date_input");
+const timeSelect = document.getElementById("time_select");
+const bookingForm = document.getElementById("booking_form");
 
 // Times for dates arrays here:
 const availableTimeSlots = [new Date(2022, 5, 10, 12, 45),
@@ -30,18 +35,15 @@ serviceSelect.addEventListener("input", (event) => {
 });
 
 controllerSelect.addEventListener("input", (event) => {
-    var textInput = document.getElementById("other_controller_input");
-
     if (event.target.value == "other") {
-        textInput.className = "form-select";
+        otherInput.className = "form-select";
     } else {
-        textInput.className = "form-select d-none";
-        textInput.value = "";
+        otherInput.className = "form-select d-none";
+        otherInput.value = "";
     }
 });
 
 dateInput.addEventListener("input", (event) => {
-    var timeInput = document.getElementById("time_select");
     var selectedDate = new Date(`${event.target.value}T12:00`);
     var inHTML = "";
 
@@ -53,7 +55,7 @@ dateInput.addEventListener("input", (event) => {
         }
     }
 
-    timeInput.innerHTML = inHTML;
+    timeSelect.innerHTML = inHTML;
 });
 
 function dateEquals(d1, d2) {
@@ -69,4 +71,22 @@ function dateEquals(d1, d2) {
     return (d1.getDate() === d2.getDate() &&
             d1.getMonth() === d2.getMonth() &&
             d1.getFullYear() === d2.getFullYear());
+}
+
+bookingForm.onsubmit = function formSubmit(event) {
+    var confirmRow = document.getElementById("confirm_row");
+    var confirmationRow = document.getElementById("confirmation_row");
+
+    confirmRow.className = "row my-4 d-none";
+    confirmationRow.className = "row my-4";
+
+    nameInput.disabled = true;
+    emailInput.disabled = true;
+    serviceSelect.disabled = true;
+    controllerSelect.disabled = true;
+    otherInput.disabled = true;
+    dateInput.disabled = true;
+    timeSelect.disabled = true;
+
+    event.preventDefault();
 }

@@ -59,7 +59,7 @@
         <div class="container-lg p-5 my-5 border">
             <h1>Booking</h1>
 
-            <form>
+            <form id="booking_form">
                 <div class="row my-4">
                     <div class="col">
                         <label for="name_input" class="form-label">Name:</label>
@@ -110,10 +110,10 @@
                     </div>
                 </div>
 
-                <div class="row my-4">
+                <div id="confirm_row" class="row my-4">
                     <div class="col-md-4">
                         <div class="d-grid">
-                            <button type="button" class="btn btn-primary">Confirm</button>
+                            <button type="submit" class="btn btn-primary">Confirm</button>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -121,6 +121,20 @@
                         <p id="price_text" class="text-start d-inline price">
                             <!-- Price text, updates on service selection. -->
                         </p>
+                    </div>
+                </div>
+
+                <div id="confirmation_row" class="row my-4 d-none">
+                    <div class="col-md-6">
+                        Appointment Number:
+                        <br>
+                        ####-####-####-####
+                        <br><br>
+                        A confirmation email has been sent to your email address.
+                        <br>
+                        You can cancel your appointment by using the link in said email.
+                        <br><br>
+                        Alternatively, call us via the inquiry line (found in the header and home page) with the appointment number in hand, if there was a mistake in the email address.    
                     </div>
                 </div>
             </form>
