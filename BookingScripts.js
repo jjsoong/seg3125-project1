@@ -51,7 +51,12 @@ dateInput.addEventListener("input", (event) => {
         if (dateEquals(selectedDate, availableTimeSlots[i])) {
             var hours = availableTimeSlots[i].getHours();
             var minutes = availableTimeSlots[i].getMinutes();
-            inHTML = inHTML + `<option value="${hours}${minutes}">${hours}:${minutes}</option>`;
+
+            if (hours > 12) {
+                inHTML = inHTML + `<option value="${hours-12}${minutes}">${hours-12}:${minutes} p.m.</option>`;
+            } else {
+                inHTML = inHTML + `<option value="${hours}${minutes}">${hours}:${minutes} a.m.</option>`;
+            }
         }
     }
 
