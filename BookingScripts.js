@@ -76,9 +76,11 @@ function dateEquals(d1, d2) {
 bookingForm.onsubmit = function formSubmit(event) {
     var confirmRow = document.getElementById("confirm_row");
     var confirmationRow = document.getElementById("confirmation_row");
+    var formHeading = document.getElementById("form_heading");
 
     confirmRow.className = "row my-4 d-none";
     confirmationRow.className = "row my-4";
+    formHeading.innerHTML = "Confirmation of Appointment";
 
     nameInput.disabled = true;
     emailInput.disabled = true;
