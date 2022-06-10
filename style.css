@@ -8,6 +8,11 @@
     height: 300px;
 }
 
+.home-page-picture {
+    width:333px;
+    height:267px;
+}
+
 .price {
     font-size: 20px;
     font-weight: 600;
