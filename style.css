@@ -3,9 +3,18 @@
     height: 120px;
 }
 
+.profile-picture {
+    width: 300px;
+    height: 300px;
+}
+
 .price {
     font-size: 20px;
     font-weight: 600;
+}
+
+.google-map {
+    box-sizing: content-box;
 }
 
 h1 {
